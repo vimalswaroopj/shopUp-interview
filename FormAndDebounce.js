@@ -47,7 +47,11 @@ function ReactForm() {
             console.log(passInput.current.value);
   };
 
-  const handleReset = () => {};
+  const handleReset = () => {
+    nameField.current.value = "";
+    emailInput.current.value = "";
+    passInput.current.value = "";
+  };
 
   const handleSearch = (value) => {
     // add your api logic here
@@ -69,7 +73,6 @@ function ReactForm() {
         callback(arguments);
       }, delay);
     }
-
   };
 
   // do not modify this line
@@ -121,7 +124,9 @@ function ReactForm() {
         <button onClick={() => {
             handleSubmit()
           }}>Submit</button>
-        <button>Reset</button>
+        <button onClick={() => {
+          handleReset()
+        }}>Reset</button>
       </div>
       <div>
         <hr />
